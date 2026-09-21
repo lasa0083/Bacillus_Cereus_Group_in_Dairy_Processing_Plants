@@ -10,4 +10,4 @@
 
 module purge > /dev/null 2>&1
 
-apptainer run /path/to/containers/mashtree_1.4.5--pl5321h031d066_0.sif* mashtree ./assemblies_fasta/*.fasta > mashtree.dnd
+apptainer run /path/to/containers/mashtree_1.4.5--pl5321h031d066_0.sif* mashtree ./cleanfna/*.fna > mashtree.dnd
