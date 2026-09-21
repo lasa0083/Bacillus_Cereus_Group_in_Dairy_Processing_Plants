@@ -1,0 +1,7 @@
+#Multiqc commands
+
+apptainer run /path/to/containers/multiqc_1.16.sif multiqc ./fastqc_output/*_fastqc
+
+apptainer run /path/to/containers/multiqc_1.16.sif  multiqc ./fastqc_output_trimmed/*_fastqc -o multiqc_trimmed
+
+apptainer run /path/to/containers/multiqc_1.16.sif multiqc --interactive ./extracted_fastp_trim_fastqc/ -o multiqc_trimgalore
