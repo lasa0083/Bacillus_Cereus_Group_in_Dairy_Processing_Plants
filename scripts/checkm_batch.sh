@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A hpc2n2026-126
+#SBATCH -A 
 #SBATCH --ntasks-per-node=28
 #SBATCH -N 1
 #SBATCH --output=checkm.out
@@ -11,4 +11,4 @@
 
 module purge > /dev/null 2>&1
 
-apptainer run /proj/nobackup/carroll_hpc2n/containers/checkm-genome_1.2.2--pyhdfd78af_1.sif checkm lineage_wf -x fasta -t 28 -f checkm_out.txt --tab_table assemblies_fasta/ checkm_out
+apptainer run /path/to/container/checkm-genome_1.2.2.sif checkm lineage_wf -x fasta -t 28 -f checkm_out.txt --tab_table assemblies_fasta/ checkm_out
