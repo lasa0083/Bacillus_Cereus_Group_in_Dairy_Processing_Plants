@@ -16,5 +16,5 @@ ml GTDB-Tk/2.6.1
 
 #gtdbtk classify_wf --genome_dir fna --out_dir gtdbtk_out --cpus 28 --mash_db ./mash
 
-gtdbtk classify_wf --genome_dir assemblies_fasta --extension fasta --out_dir gtdbtk_out --cpus 28 --skani_sketch_dir skani --pplacer_cpus 28
+gtdbtk classify_wf --genome_dir fna --extension fasta --out_dir gtdbtk_out --cpus 28 --skani_sketch_dir skani --pplacer_cpus 28
 
