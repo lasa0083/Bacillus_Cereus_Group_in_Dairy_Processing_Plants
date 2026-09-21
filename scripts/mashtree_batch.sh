@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A hpc2n2026-126
+#SBATCH -A 
 #SBATCH --nodes=16
 #SBATCH --output=mashtree.out
 #SBATCH --error=mashtree.err
@@ -10,4 +10,4 @@
 
 module purge > /dev/null 2>&1
 
-apptainer run /proj/nobackup/carroll_hpc2n/containers/mashtree_1.4.5--pl5321h031d066_0.sif* mashtree ./assemblies_fasta/*.fasta > mashtree.dnd
+apptainer run /path/to/containers/mashtree_1.4.5--pl5321h031d066_0.sif* mashtree ./assemblies_fasta/*.fasta > mashtree.dnd
