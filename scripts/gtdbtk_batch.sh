@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A hpc2n2026-126
+#SBATCH -A 
 #SBATCH --ntasks-per-node=28
 #SBATCH -N 1
 #SBATCH --output=gtdbtk.out
