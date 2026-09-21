@@ -9,7 +9,7 @@ workflow {
 }
 
 process fastqc {
-  container "/proj/nobackup/carroll_hpc2n/containers/fastqc_0.12.1--hdfd78af_0.sif"
+  container "/path/to/containers/fastqc_0.12.1.sif"
   publishDir "fastqc_output_trimmed/", mode: "copy"
   input:
     tuple val(accession), path(reads)
