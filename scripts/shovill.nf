@@ -18,8 +18,10 @@ process shovill {
     tuple val(sample_id), path(f_reads), path(r_reads)
   output:
     tuple val(sample_id), path("${sample_id}_shovill")
-  script: 
+  errorStrategy 'ignore'
+  script:
   """
-  shovill  errorStrategy 'ignore' --cpus ${task.cpus} --assembler skesa --minlen 200 --mincov 10 --outdir "${sample_id}_shovill" --R1 "${f_reads}" --R2 "${r_reads}"   
-  """
+  shovill  --cpus ${task.cpus} --assembler skesa --minlen 200 --mincov 10 --outdir "${sample_id}_shovill" --R1 "${f_reads}" --R2 "${r_reads}"
+  mv "${sample_id}_shovill"/contigs.fa "${sample_id}_shovill/${sample_id}.fna"
+ """
 }
