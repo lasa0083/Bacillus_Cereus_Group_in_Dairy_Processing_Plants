@@ -1,8 +1,8 @@
 workflow {
     // define the parameters
     input = Channel
-        .fromPath("assemblies_fasta/*.fasta")
-        .map{tuple( it.name.split('.fasta')[0], it )}
+        .fromPath("fna/*.fna")
+        .map{tuple( it.name.split('.fna')[0], it )}
         //.map{file -> tuple(file.simpleName, file)}
     // run the process
     quast(input)
