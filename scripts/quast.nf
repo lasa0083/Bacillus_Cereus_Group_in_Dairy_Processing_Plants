@@ -9,7 +9,7 @@ workflow {
 }
 
 process quast {
-  container "/proj/nobackup/carroll_hpc2n/containers/quast_5.2.0--py39pl5321h4e691d4_3.sif"
+  container "/path/to/containers/quast_5.2.0--py39pl5321h4e691d4_3.sif"
   publishDir "quast/", mode: "copy"
   input:
     tuple val(accession), path(contigs)
