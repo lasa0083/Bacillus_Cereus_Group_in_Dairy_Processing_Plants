@@ -11,7 +11,7 @@ workflow {
 }
 
 process fastp {
-  container "/proj/nobackup/carroll_hpc2n/containers/fastp_0.23.4--hadf994f_3.sif"  
+  container "/path/to/containers/fastp_0.23.4--hadf994f_3.sif"  
   publishDir "trimmed_fastp", mode: "copy"
   input:
       tuple val(sample_id), path(f_reads), path(r_reads)
