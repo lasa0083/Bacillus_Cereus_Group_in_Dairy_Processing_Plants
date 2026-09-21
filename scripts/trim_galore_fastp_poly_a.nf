@@ -12,7 +12,7 @@ workflow {
 }
 
 process trimgalore {
-  container "/proj/nobackup/carroll_hpc2n/containers/trim-galore_2.3.0--hf1b6044_0.sif"
+  container "/path/to/trim-galore_2.3.0--hf1b6044_0.sif"
   publishDir "trimgalore_output/", mode: "copy"
   input:
     tuple val(sample_id), path(f_reads), path(r_reads)
