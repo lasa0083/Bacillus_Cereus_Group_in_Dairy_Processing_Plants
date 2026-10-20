@@ -1,0 +1,20 @@
+# Remove reference sequence from the whole genome alignment file (core.full.aln)
+rsync -a core.full.aln ref_core.full.aln
+sed -i '/>Reference/Q' core.full.aln
+
+# Identify and remove recombinations
+apptainer exec /path/to/container/gubbins_3.4--py39pl5321h577a1d6_1.sif run_gubbins.py -p gubbins clean.full.aln --tree-builder iqtree-fast --first-tree-builder iqtree-fast --threads 28
+
+# Get the full length recombination masked alignment
+apptainer exec /path/to/container/gubbins_3.4--py39pl5321h577a1d6_1.sif mask_gubbins_aln.py --aln clean.full.aln --gff gubbins.recombination_predictions.gff --out clean.full.masked.aln
+
+# Query each resulting full length recombination-masked alignment for core SNPs and constant sites
+apptainer exec /path/to/container/snp-sites-staphdb-2.5.1.sif snp-sites -c -o clean.core.masked.aln clean.full.masked.aln
+apptainer exec /path/to/container/snp-sites-staphdb-2.5.1.sif snp-sites -C -o clean.full.masked.aln.fconst clean.full.masked.aln
+
+# Convert the recombination masked core SNP alignment to a SNP distance matrix
+apptainer exec /path/to/container/snp-dists_v0.8.2.sif snp-dists -b clean.core.masked.aln > snp-dists.tsv
+
+# Make a phylogeny
+fconst=`cat clean.full.masked.aln.fconst`
+apptainer exec /path/to/container/iqtree_2.2.5--h21ec9f0_0.sif iqtree2 --seed 1000 -s clean.core.masked.aln -m MFP -B 1000 -alrt 1000 -fconst ${fconst} -T AUTO

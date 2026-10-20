@@ -1,0 +1,13 @@
+# Make samplesheet
+cat /path/to/file/St26_Assemblies.txt | awk -v FS='\t' -v OFS='\t' '{print $1}' | while read sample_id; do R1=`echo /path/to/trimmed_reads/${sample_id}_trimmed_1_val_1.fq.gz`;R2=`echo /path/to/trimmed_reads/${sample_id}_trimmed_2_val_2.fq.gz`;echo -e "${sample_id}\t${R1}\t${R2}";done > samplesheet.tab
+
+# Lets assume you have the slurm header file (snippy_header.sh)
+
+# Create scripts
+apptainer exec --bind /working/directory/ /path/to/containers/snippy_4.6.0--hdfd78af_3.sif snippy-multi samplesheet.tab --ref /path/to/reference/genome/Bacillus_cereus.gbff --cpus 28 > snippy_multi.sh
+
+# Add container/other snippy params
+cat snippy_multi.sh | while read snippy_cmd; do echo -e "apptainer exec --bind /working/directory/ /path/to/containers/snippy_4.6.0--hdfd78af_3.sif ${snippy_cmd}";done > snippy_multi_apptainer.sh# Add slurm batch info
+cat snippy_header.sh > snippy_multi_sbatch.sh
+cat snippy_multi_apptainer.sh >> snippy_multi_sbatch.sh
+

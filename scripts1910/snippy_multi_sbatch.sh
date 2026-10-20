@@ -1,0 +1,28 @@
+#!/usr/bin/bash -l
+#SBATCH -A
+#SBATCH --ntasks-per-node=28
+#SBATCH -N 1
+#SBATCH --output=snippy.out
+#SBATCH --error=snippy.err
+#SBATCH --time=03:00:00
+
+
+apptainer exec --bind /working/directory/  /path/to/containers/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL1_2' --R1 '/path/to/trimmed_reads/AL1_2_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL1_2_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL21' --R1 '/path/to/trimmed_reads/AL21_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL21_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL24' --R1 '/path/to/trimmed_reads/AL24_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL24_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL25' --R1 '/path/to/trimmed_reads/AL25_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL25_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL3_2' --R1 '/path/to/trimmed_reads/AL3_2_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL3_2_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL4' --R1 '/path/to/trimmed_reads/AL4_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL4_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL52' --R1 '/path/to/trimmed_reads/AL52_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL52_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL66' --R1 '/path/to/trimmed_reads/AL66_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL66_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL7_1' --R1 '/path/to/trimmed_reads/AL7_1_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL7_1_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL76' --R1 '/path/to/trimmed_reads/AL76_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL76_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL79' --R1 '/path/to/trimmed_reads/AL79_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL79_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL8_1' --R1 '/path/to/trimmed_reads/AL8_1_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL8_1_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL81' --R1 '/path/to/trimmed_reads/AL81_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL81_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL84' --R1 '/path/to/trimmed_reads/AL84_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL84_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL88' --R1 '/path/to/trimmed_reads/AL88_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL88_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL94' --R1 '/path/to/trimmed_reads/AL94_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL94_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL98' --R1 '/path/to/trimmed_reads/AL98_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL98_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working/directory/ /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy --outdir 'AL99' --R1 '/path/to/trimmed_reads/AL99_trimmed_1_val_1.fq.gz' --R2 '/path/to/trimmed_reads/AL99_trimmed_2_val_2.fq.gz' --ref /path/to/reference/Bacillus_cereus.gbff --cpus 28
+apptainer exec --bind /working directory /path/to/container/snippy_4.6.0--hdfd78af_3.sif snippy-core --ref 'AL1_2/ref.fa' AL1_2 AL21 AL24 AL25 AL3_2 AL4 AL52 AL66 AL76 AL79 AL7_1 AL81 AL84 AL88 AL8_1 AL94 AL98 AL99
